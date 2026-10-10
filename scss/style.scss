@@ -240,3 +240,100 @@ h6,
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Badge "Per ordinare chiamaci" al posto della freccia "torna su", stessi colori del btn-primary */
+.order-phone-badge {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 185px;
+    padding: 16px 14px;
+    border-radius: 17px;
+    background-color: $primary;
+    border: 1px solid $primary;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    animation: action 1s infinite alternate;
+    transition: background-color .3s, border-color .3s;
+}
+
+.order-phone-badge-number {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.order-phone-badge i {
+    font-size: 19px;
+}
+
+.order-phone-badge:hover,
+.order-phone-badge:focus {
+    background-color: #d38d3c;
+    border-color: #d18731;
+    color: #fff;
+    text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+    .order-phone-badge {
+        right: 15px;
+        bottom: 15px;
+        width: 155px;
+        padding: 13px 10px;
+        font-size: 13px;
+    }
+}
+
+/* Elenco prezzi sotto ogni prodotto (es. pagina capsule Nespresso) */
+.price-list {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.price-list li {
+    background-color: $light;
+    border: 1px solid $primary;
+    border-radius: 50rem;
+    padding: 5px 14px;
+    font-size: 14px;
+    color: #555;
+}
+
+.product-price-compact span {
+    font-size: 12px !important;
+}
+
+.price-list li strong {
+    font-size: 15px;
+    color: $primary;
+}
+
+/* Card prodotto: stessa altezza per tutte le card della stessa riga */
+.row:has(.single-product-item) {
+    align-items: stretch !important;
+}
+
+.single-product-item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
