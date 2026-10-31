@@ -1,21 +1,24 @@
 (function ($) {
     "use strict";
 
-    // Dropdown on mouse hover
-    $(document).ready(function () {
-        function toggleNavbarMethod() {
-            if ($(window).width() > 992) {
-                $('.navbar .dropdown').on('mouseover', function () {
-                    $('.dropdown-toggle', this).trigger('click');
-                }).on('mouseout', function () {
-                    $('.dropdown-toggle', this).trigger('click').blur();
-                });
-            } else {
-                $('.navbar .dropdown').off('mouseover').off('mouseout');
-            }
+    // Dropdown on mouse hover (solo desktop): apre/chiude in modo esplicito
+    // invece di simulare click, che con mouseover/mouseout si desincronizzava
+    function isDesktop() {
+        return window.matchMedia('(min-width: 992px)').matches;
+    }
+    function setDropdown(dropdown, open) {
+        $(dropdown).toggleClass('show', open);
+        $('.dropdown-menu', dropdown).toggleClass('show', open);
+        $('.dropdown-toggle', dropdown).attr('aria-expanded', open ? 'true' : 'false');
+    }
+    $(document).on('mouseenter', '.navbar .dropdown', function () {
+        if (isDesktop()) {
+            setDropdown(this, true);
         }
-        toggleNavbarMethod();
-        $(window).resize(toggleNavbarMethod);
+    }).on('mouseleave', '.navbar .dropdown', function () {
+        if (isDesktop()) {
+            setDropdown(this, false);
+        }
     });
 
 
