@@ -10221,3 +10221,49 @@ ul.product-share {
 .promo-badge i {
   margin-right: 6px;
 }
+
+/* Macchine: nota prezzo e promo accanto al pulsante Capsule */
+.macchina-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.macchina-prezzo-nota {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  border: 2px dashed #DA9F5B;
+  border-radius: 12px;
+  color: #6c6c6c;
+  font-size: 13px;
+  line-height: 1.3;
+  text-decoration: none;
+}
+.macchina-prezzo-nota:hover {
+  color: #6c6c6c;
+  text-decoration: none;
+  background-color: rgba(218, 159, 91, 0.08);
+}
+.macchina-prezzo-nota > i {
+  font-size: 20px;
+  color: #DA9F5B;
+}
+.macchina-prezzo-nota span {
+  display: flex;
+  flex-direction: column;
+}
+.macchina-prezzo-nota strong {
+  color: #DA9F5B;
+  font-size: 15px;
+}
+.macchina-prezzo-nota strong i {
+  margin-right: 5px;
+}
+
+/* Low Cost: più spazio tra una sezione e l'altra */
+.section-title.lowcost-section {
+  margin-top: 6rem;
+}
