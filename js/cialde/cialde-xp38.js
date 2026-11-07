@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     {
     img:'img/cialde/product-img-9.jpg',
     title:'Cialda Argento xp38',
-    description_one: 'Miscela prodotta da caffè sudamericano,',
-    description_two: 'aroma intenso e vellutato',
+    description_one: 'Tostatura forte, bilanciata tra',
+    description_two: '70% robusta e 30% arabica',
     quantity:'100pz',
     }
   ]
